@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+}
+body{
+  background-color: #46061eea;
+}
+.expense-container{
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow:0 0 10px 0 rgb(0,0,0,0.1) ;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+
+}
+.expense-item{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  min-width: 0;
+}
+.expense-item.income {
+  border-right: 5px solid #02c002;
+}
+.expense-item.expense {
+  border-right: 5px solid #dc0202;
+}
+.expense-item.income .expense-amount{
+  color: #02c002;
+}
+.expense-item.expense .expense-amount{
+  color: #dc0202;
+}
+.expenses-form{
+  padding: 10px;
+  padding-top: 0px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.form-group{
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  margin-bottom: 10px;
+}
+input{
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+button{
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #3A0519;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+}
+.balance-container{
+  background-color: transparent;
+  background-color: #3A0519;
+  display: flex;
+  justify-content:space-around;
+  gap: 10px;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+.currency-item{
+  background-color: white;
+  color: black;
+  gap:10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px 30px;
+}
+.currency-item .title{
+  font-size: 15.5px;
+  text-transform: capitalize;
+}
+.currency-item .amount {
+  font-size: 30px;
+  font-style: bold;
+  word-break: break-all;      /* Allow long numbers to wrap */
+  overflow-wrap: anywhere;    /* Modern way to break long words/numbers */
+  text-align: center;         /* Center the number */
+  max-width: 100%;
+  display: block;
+}
+span{
+  color: #dc0202;
+}
+#income{    
+  color: #02c002;
+}
+#expense{
+  color: #dc0202;
+}
+.edit_btn,
+.delte_btn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.expense-item:hover .edit_btn,
+.expense-item:hover .delte_btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.delte_btn{
+  position: absolute;
+  right: 120px; 
+  width: 70px;
+}
+.edit_btn{
+  position: absolute;
+  right: 200px; 
+  width: 70px;
+}
+.expense-item.editing {
+  border-top: 3px solid #3A0519 !important;
+  border-left: 3px solid #3A0519 !important;
+  border-bottom: 3px solid #3A0519 !important;
+}
+.small-button{
+  background-color: #3A0519;
+  color: #ddd;
+  width: 60px;
+  margin-left: 20px;
+}
+.expense-title {
+  max-width:450px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.history {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Optional: add spacing between history items if needed */
+.history .expense-item {
+  margin-bottom: 16px;
+}
+@media (max-width: 600px) {
+  .expense-container {
+    max-width: 98vw;
+    margin: 10px;
+    padding: 10px;
+  }
+  .balance-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  .currency-item {
+    width: 100%;
+    padding: 10px 0;
+  }
+  .expense-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 5px 30px 5px;
+    min-width: 0;
+  }
+  .expense-title {
+    max-width: 90vw;
+    width: 100%;
+  }
+  .expense-amount {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+  }
+  .edit_btn,
+  .delte_btn {
+    position: static;
+    width: 48%;
+    margin: 5px 1% 0 0;
+    display: inline-block;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .expense-item:hover .edit_btn,
+  .expense-item:hover .delte_btn {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .history {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    min-height: 120px;
+    max-height: 40vh;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .history h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+  .history .expense-item {
+    margin-bottom: 10px;
+    padding: 12px 8px 18px 8px;
+    border-radius: 8px;
+    background: #faf7fa;
+    border: 1px solid #eee;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    flex-direction: column;
+    align-items: stretch;
+    width: 99%;
+  }
+  .history .expense-title {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    max-width: 100%;
+    width: 100%;
+    word-break: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .history .edit_btn,
+  .history .delte_btn {
+    position: static;
+    width: 100%;
+    margin: 0 0 8px 0;
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .history .expense-item:hover .edit_btn,
+  .history .expense-item:hover .delte_btn {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .history .expense-amount {
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 100%;
+    text-align: left;
+  }
+}
