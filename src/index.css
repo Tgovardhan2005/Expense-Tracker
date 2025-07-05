@@ -226,7 +226,7 @@ span{
 .auth-container .small-button {
   background: #3a0519;
   color: #fff;
-  border: none;
+  border: solid 2px #fff;
   border-radius: 8px;
   padding: 13px 0;
   font-size: 1.13rem;
