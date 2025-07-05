@@ -244,7 +244,7 @@ span{
 .auth-container .small-button:hover {
   background: #fff;
   color: #3a0519;
-  border: solid 2px #3a0519;
+  border: solid 2px #fff;
   box-shadow: 0 4px 18px rgba(58,5,25,0.10);
 }
 
