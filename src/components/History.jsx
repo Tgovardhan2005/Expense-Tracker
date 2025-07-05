@@ -1,6 +1,8 @@
 import ExpenseItem from "./ExpenseItem";
 function History(props){
-    const {expenses, itemToEdit, deleteExpense, setItemToEdit} = props;
+    // Ensure expenses is always an array
+    const expenses = Array.isArray(props.expenses) ? props.expenses : [];
+    const { itemToEdit, deleteExpense, setItemToEdit } = props;
     return(
         <>
             <div className="history"> 

@@ -1,17 +1,19 @@
 function BalanceConatiner(props){
-    const incomeArr=props.expenses.filter((expense)=> expense.amount>0);
-    const expenseArr=props.expenses.filter((expense)=> expense.amount<0);
-    let income=0;
-    let expense=0;
+    // Ensure props.expense is an array to avoid errors
+    const expenses = Array.isArray(props.expense) ? props.expense : [];
+    const incomeArr = expenses.filter((expense) => expense.amount > 0);
+    const expenseArr = expenses.filter((expense) => expense.amount < 0);
+    let income = 0;
+    let expense = 0;
 
-    incomeArr.forEach(expenseobj => income+=parseInt(expenseobj.amount));
-    expenseArr.forEach(expenseobj => expense+=parseInt(expenseobj.amount));
-    var total=income+expense;
-    expense*=-1;
-    if(total<0){
-        total=0;
+    incomeArr.forEach(expenseobj => income += parseInt(expenseobj.amount));
+    expenseArr.forEach(expenseobj => expense += parseInt(expenseobj.amount));
+    var total = income + expense;
+    expense *= -1;
+    if (total < 0) {
+        total = 0;
     }
-    console.log("income:",income,"expenses:",expense,"total:",total);
+    console.log("income:", income, "expenses:", expense, "total:", total);
     return (
         <>
             <div className="balance-container">

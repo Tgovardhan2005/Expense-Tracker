@@ -161,6 +161,150 @@ span{
 .history .expense-item {
   margin-bottom: 16px;
 }
+.auth-container {
+  max-width: 420px;
+  margin: 70px auto 0 auto;
+  padding: 40px 36px 32px 36px;
+  border-radius: 14px;
+  background: #3a0519;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.13);
+  border: 1px solid #3a0519;
+  color: #fff;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+
+.auth-container:hover {
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.16);
+}
+
+.auth-container h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: none;
+}
+
+.auth-container .form-group {
+  margin-bottom: 22px;
+}
+
+.auth-container .form-group label {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 7px;
+  font-size: 1.13rem;
+  letter-spacing: 0.2px;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+  background: #fff;
+  border: 1.5px solid #ddd;
+  color: #3a0519;
+  padding: 13px 16px;
+  border-radius: 8px;
+  font-size: 1.13rem;
+  margin-bottom: 2px;
+  transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+  outline: none;
+  box-shadow: 0 1.5px 8px rgba(58,5,25,0.04);
+  font-weight: 500;
+}
+
+.auth-container input[type="text"]:focus,
+.auth-container input[type="password"]:focus {
+  border: 1.5px solid #3a0519;
+  background: #f5f5f5;
+  box-shadow: 0 2px 12px rgba(58,5,25,0.08);
+}
+
+.auth-container button,
+.auth-container .small-button {
+  background: #fff;
+  color: #3a0519;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 0;
+  font-size: 1.13rem;
+  font-weight: 700;
+  margin-top: 18px;
+  margin-bottom: 0;
+  width: 100%;
+  box-shadow: 0 2px 12px rgba(58,5,25,0.06);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  letter-spacing: 0.7px;
+}
+
+.auth-container button:hover,
+.auth-container .small-button:hover {
+  background: #3a0519;
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(58,5,25,0.10);
+}
+
+.auth-container .small-button {
+  width: 65%;
+  margin: 22px auto 0 auto;
+  display: block;
+  padding: 11px 0;
+  font-size: 1.03rem;
+  background: #fff;
+  color: #3a0519;
+  border: 1.2px solid #3a0519;
+  border-radius: 8px;
+  box-shadow: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.auth-container .small-button:hover {
+  background: #3a0519;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(58,5,25,0.13);
+}
+
+.auth-container span {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.05rem;
+  color: #dc0202;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.auth-container span[style*="green"] {
+  color: #18b218 !important;
+}
+
+/* Logout button: small and right-aligned */
+.logout-btn {
+  width: 100px;
+  float: right;
+  margin: 18px 18px 0 0;
+  padding: 8px 0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #3a0519;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(58,5,25,0.08);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.logout-btn:hover {
+  background: #fff;
+  color: #3a0519;
+  box-shadow: 0 4px 12px rgba(58,5,25,0.13);
+}
+
 @media (max-width: 600px) {
   .expense-container {
     max-width: 98vw;
@@ -178,33 +322,42 @@ span{
   }
   .expense-item {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 5px 30px 5px;
+    align-items: stretch;
+    padding: 16px 10px 16px 10px;
     min-width: 0;
+    background: #faf7fa;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    margin-bottom: 14px;
+    border: 1px solid #eee;
   }
   .expense-title {
-    max-width: 90vw;
+    max-width: 100%;
     width: 100%;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 8px;
+    word-break: break-word;
+    white-space: normal;
   }
   .expense-amount {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    
+    margin: 10px 0 0 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #18b218;
+    text-align: center;
   }
   .edit_btn,
   .delte_btn {
     position: static;
-    width: 48%;
-    margin: 5px 1% 0 0;
-    display: inline-block;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-  }
-  .expense-item:hover .edit_btn,
-  .expense-item:hover .delte_btn {
-    opacity: 1;
+    width: 100%;
+    margin: 6px 0 0 0;
+    display: block;
+    opacity: 1 !important; /* Always visible on mobile */
     pointer-events: auto;
+    font-size: 1rem;
+    padding: 10px 0;
   }
   .history {
     margin-top: 16px;
@@ -238,7 +391,8 @@ span{
     word-break: break-word;
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;
+    white-space: normal;
+    text-align: center;
   }
   .history .edit_btn,
   .history .delte_btn {
@@ -246,13 +400,7 @@ span{
     width: 100%;
     margin: 0 0 8px 0;
     display: block;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-  }
-  .history .expense-item:hover .edit_btn,
-  .history .expense-item:hover .delte_btn {
-    opacity: 1;
+    opacity: 1 !important; /* Always visible on mobile */
     pointer-events: auto;
   }
   .history .expense-amount {
@@ -261,6 +409,39 @@ span{
     font-size: 1.1rem;
     font-weight: 500;
     width: 100%;
-    text-align: left;
+    text-align: center;
+  }
+  .auth-container {
+    max-width: 98vw;
+    padding: 18px 6vw 18px 6vw;
+    margin: 18px 2vw;
+    border-radius: 14px;
+  }
+  .auth-container h3 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+  .auth-container button,
+  .auth-container .small-button {
+    font-size: 1rem;
+    padding: 10px 0;
+    border-radius: 7px;
+  }
+  .auth-container .form-group label {
+    font-size: 1rem;
+  }
+  .auth-container input[type="text"],
+  .auth-container input[type="password"] {
+    font-size: 1rem;
+    padding: 10px 12px;
+    border-radius: 7px;
+  }
+  .logout-btn {
+    width: 100%;
+    float: none;
+    margin: 12px 0 0 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    border-radius: 7px;
   }
 }
