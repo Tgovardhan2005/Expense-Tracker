@@ -1,12 +1,21 @@
-# React + Vite
+# Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Expense Tracker is a full-stack MERN application that helps users add, edit, and delete expenses, view transaction history.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add, edit, and delete expenses
+- View transaction history
+- Responsive user interface
+- User authentication 
 
-## Expanding the ESLint configuration
+## Screenshots
+![image](https://github.com/user-attachments/assets/afbd0dcd-39b8-48ba-a5aa-465f5a2dbc52)
+![image](https://github.com/user-attachments/assets/b7e18c2d-edde-41a2-a3e0-81c0050c1fb8)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Tech Stack
+
+- **Frontend:** React, Vite, CSS
+- **Backend:** Node.js, Express
+- **Database:** MongoDB
