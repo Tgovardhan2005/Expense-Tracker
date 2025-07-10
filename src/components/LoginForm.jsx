@@ -9,7 +9,7 @@ function LoginForm({ onLogin }) {
     e.preventDefault();
     setErr("");
     try {
-      const res = await fetch("http://localhost:3000/login", {
+      const res = await fetch("https://expense-tracker-backend-oi0v.onrender.com/expense/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
