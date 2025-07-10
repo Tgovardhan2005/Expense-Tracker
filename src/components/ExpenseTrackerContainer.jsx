@@ -9,7 +9,7 @@ function ExpenseTrackerContainer({ token }) {
 
   const fetchExpense = async () => {
     try {
-      const response = await fetch('http://localhost:3000/expense', {
+      const response = await fetch('https://expense-tracker-backend-oi0v.onrender.com/expense', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await response.json();
@@ -26,7 +26,7 @@ function ExpenseTrackerContainer({ token }) {
 
   async function addExpense(title, amount) {
     try {
-      await fetch('http://localhost:3000/expense', {
+      await fetch('https://expense-tracker-backend-oi0v.onrender.com/expense', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ function ExpenseTrackerContainer({ token }) {
 
   async function deleteExpense(id) {
     try {
-      const response = await fetch(`http://localhost:3000/expense/${id}`, {
+      const response = await fetch(`https://expense-tracker-backend-oi0v.onrender.com/expense/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ function ExpenseTrackerContainer({ token }) {
 
   async function editExpense(id, title, amount) {
     try {
-      const response = await fetch(`http://localhost:3000/expense/${id}`, {
+      const response = await fetch(`https://expense-tracker-backend-oi0v.onrender.com/expense/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
