@@ -11,7 +11,7 @@ function RegisterForm({ onRegister }) {
     setErr("");
     setSuccess("");
     try {
-      const res = await fetch("http://localhost:3000/register", {
+      const res = await fetch("https://expense-tracker-backend-oi0v.onrender.com/expense/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
