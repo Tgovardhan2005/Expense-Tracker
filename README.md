@@ -1,4 +1,4 @@
-# Expense Tracker
+# Expense Manager
 
 Expense Tracker is a full-stack MERN application that helps users add, edit, and delete expenses, view transaction history.
 
